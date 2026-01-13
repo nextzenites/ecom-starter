@@ -1,4 +1,5 @@
 import Carousel from "../components/Carousel"
+import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 import ProductCard from "../components/ProductCard"
 
@@ -38,6 +39,7 @@ function HomePage() {
 
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
