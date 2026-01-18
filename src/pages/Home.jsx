@@ -1,4 +1,6 @@
+import { useState } from "react"
 import Carousel from "../components/Carousel"
+import CartSidebar from "../components/CartSidebar"
 import Footer from "../components/Footer"
 import LoginModal from "../components/LoginModal"
 import NavBar from "../components/NavBar"
@@ -25,9 +27,11 @@ const products = [
 
 
 function HomePage() {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
     return (
         <>
-            <NavBar />
+            <NavBar onCartClick={() => setIsCartOpen(true)} />
             <Carousel />
             <div className="container mx-auto">
                 <div className="grid grid-cols-6 gap-6 my-20">
@@ -42,8 +46,10 @@ function HomePage() {
             </div>
             <Footer />
 
-            {/* these will not show until a event */}
             <LoginModal />
+            <CartSidebar isOpen={isCartOpen}
+                onClose={() => setIsCartOpen(false)} />
+
         </>
     )
 }
