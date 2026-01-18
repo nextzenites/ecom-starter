@@ -1,4 +1,4 @@
-import React from 'react'
+import { MdLogin } from "react-icons/md";
 
 function NavBar() {
     return (
@@ -12,26 +12,26 @@ function NavBar() {
                                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>
             <div className="navbar-center hidden lg:flex min-w-96 ">
                 <label className="input rounded-2xl">
-                        <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <g
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                                strokeWidth="2.5"
-                                fill="none"
-                                stroke="#136420"
-                            >
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.3-4.3"></path>
-                            </g>
-                        </svg>
-                        <input  className="placeholder-gray-400 " type="search" required placeholder="Search"  />
-                    </label>
+                    <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2.5"
+                            fill="none"
+                            stroke="#136420"
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input className="placeholder-gray-400 " type="search" required placeholder="Search" />
+                </label>
             </div>
             <div className="navbar-end">
                 <div className="flex-none mr-20">
@@ -42,6 +42,7 @@ function NavBar() {
                                 <span className="badge badge-sm indicator-item">8</span>
                             </div>
                         </div>
+
                         <div
                             tabIndex={0}
                             className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
@@ -54,7 +55,14 @@ function NavBar() {
                             </div>
                         </div>
                     </div>
+                    <div tabIndex={1} role="button" className="btn btn-accent"
+                        onClick={() => document.getElementById('my_modal_1').showModal()}
+                    >
+                        <MdLogin size={18}  className="text-green-900" />
+                        Login
+                    </div>
                 </div>
+
             </div>
         </div>
     )
